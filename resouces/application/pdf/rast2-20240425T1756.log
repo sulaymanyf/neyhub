@@ -1,0 +1,55 @@
+2024-04-25 17:56:58,522 INFO [rast2]                 Book.java:552  | 1 sheet in resouces\application\pdf\rast2.pdf
+2024-04-25 17:56:58,596 INFO []                 Book.java:2551 | Stored /book.xml
+2024-04-25 17:56:58,596 INFO []                 Book.java:2510 | Book stored as resouces\application\pdf\rast2.omr
+2024-04-25 17:56:58,600 INFO []                 Book.java:1951 | Book reaching PAGE on sheets:[#1]
+2024-04-25 17:56:58,601 INFO [rast2]       StepMonitoring.java:98   | LOAD
+2024-04-25 17:56:58,703 INFO [rast2]                 Book.java:1794 | Loaded image 1 2550x3424 from resouces\application\pdf\rast2.pdf
+2024-04-25 17:56:58,714 INFO [rast2]       StepMonitoring.java:98   | BINARY
+2024-04-25 17:56:58,988 INFO [rast2]       StepMonitoring.java:98   | SCALE
+2024-04-25 17:56:58,999 INFO [rast2]         ScaleBuilder.java:238  | Beam  guessed height: 12 -- 0.50 of 23 interline
+2024-04-25 17:56:59,000 INFO [rast2]         ScaleBuilder.java:261  | Beam measured height: 11 -- 0.29 of [6..23] range at 307% of needed quorum
+2024-04-25 17:56:59,000 INFO [rast2]            ScaleStep.java:65   | Scale{ interline(22,23,23) line(2,2,2) beam(11)}
+2024-04-25 17:56:59,001 INFO [rast2]       StepMonitoring.java:98   | GRID
+2024-04-25 17:56:59,179 INFO [rast2]       LinesRetriever.java:1518 | Global slope: 0.00000
+2024-04-25 17:56:59,204 INFO [rast2]    ClustersRetriever.java:328  | Retrieved raw line clusters: 6 of sizes [5] with interline(22,23,23)
+2024-04-25 17:56:59,304 INFO [rast2]            PeakGraph.java:310  | Systems: #1[1] #2[2] #3[3] #4[4] #5[5] #6[6]
+2024-04-25 17:56:59,453 INFO [rast2]        SystemManager.java:736  | 1 part along 6 systems
+2024-04-25 17:56:59,456 INFO [rast2]                 Book.java:535  | Created scores: [{Score 1}]
+2024-04-25 17:56:59,457 INFO [rast2]       StepMonitoring.java:98   | HEADERS
+2024-04-25 17:56:59,575 INFO [rast2]      BasicClassifier.java:277  | Classifier loaded XML norms.
+2024-04-25 17:56:59,580 INFO [rast2]   AbstractClassifier.java:396  | Classifier data loaded from default uri jar:file:/D:/Program%20Files/Audiveris/lib/audiveris.jar!/res/basic-classifier.zip
+2024-04-25 17:56:59,870 INFO [rast2]       StepMonitoring.java:98   | STEM_SEEDS
+2024-04-25 17:56:59,934 INFO [rast2]            ImageUtil.java:204  | Discarding alpha band ...
+2024-04-25 17:57:00,026 INFO [rast2]            ImageUtil.java:122  | Converting max RGB to gray
+2024-04-25 17:57:00,121 INFO [rast2]        StemSeedsStep.java:86   | stem(2 max:2)
+2024-04-25 17:57:00,159 INFO [rast2]       StepMonitoring.java:98   | BEAMS
+2024-04-25 17:57:02,021 INFO [rast2]       StepMonitoring.java:98   | LEDGERS
+2024-04-25 17:57:02,091 INFO [rast2]       StepMonitoring.java:98   | HEADS
+2024-04-25 17:57:03,619 INFO [rast2]        HeadSeedTally.java:235  | Scale information: HeadSeeds{NOTEHEAD_BLACK[L:-0.4,R:-0.7]}
+2024-04-25 17:57:03,619 INFO [rast2]       StepMonitoring.java:98   | STEMS
+2024-04-25 17:57:03,727 INFO [rast2]       StepMonitoring.java:98   | REDUCTION
+2024-04-25 17:57:03,770 INFO [rast2]        ReductionStep.java:93   | Stems free length median value: 79 pixels, 3.4 interlines
+2024-04-25 17:57:03,770 INFO [rast2]       StepMonitoring.java:98   | CUE_BEAMS
+2024-04-25 17:57:03,771 INFO [rast2]         CueBeamsStep.java:81   | Step CUE_BEAMS is skipped because small heads switch is off
+2024-04-25 17:57:03,771 INFO [rast2]       StepMonitoring.java:98   | TEXTS
+2024-04-25 17:57:04,401 INFO [rast2]       StepMonitoring.java:98   | MEASURES
+2024-04-25 17:57:04,407 INFO [rast2]                 Page.java:307  | 22 raw measures: [4 in system#1, 4 in system#2, 4 in system#3, 4 in system#4, 4 in system#5, 2 in system#6]
+2024-04-25 17:57:04,408 INFO [rast2]       StepMonitoring.java:98   | CHORDS
+2024-04-25 17:57:04,413 INFO [rast2]       StepMonitoring.java:98   | CURVES
+2024-04-25 17:57:04,752 INFO [rast2]         SlursBuilder.java:240  | Slurs: 3
+2024-04-25 17:57:04,756 INFO [rast2]      SegmentsBuilder.java:155  | Segments: 1
+2024-04-25 17:57:04,760 INFO [rast2]       StepMonitoring.java:98   | SYMBOLS
+2024-04-25 17:57:04,850 INFO [rast2]       StepMonitoring.java:98   | LINKS
+2024-04-25 17:57:04,873 INFO [rast2]       StepMonitoring.java:98   | RHYTHMS
+2024-04-25 17:57:04,901 INFO [rast2]       StepMonitoring.java:98   | PAGE
+2024-04-25 17:57:04,906 INFO [rast2]                 Book.java:2571 | Book{rast2} storing
+2024-04-25 17:57:04,923 INFO [rast2]                 Book.java:2551 | Stored /book.xml
+2024-04-25 17:57:04,983 INFO [rast2]           DataHolder.java:348  | Stored /sheet#1/BINARY.png
+2024-04-25 17:57:05,215 INFO [rast2]                Sheet.java:1544 | Stored /sheet#1/sheet#1.xml
+2024-04-25 17:57:05,215 INFO [rast2]                 Book.java:2510 | Book stored as resouces\application\pdf\rast2.omr
+2024-04-25 17:57:05,218 INFO [rast2]            SheetStub.java:1578 | Disposed sheet
+2024-04-25 17:57:05,248 INFO [rast2]                 Book.java:2038 | End of Stub#1 memory: 31,013,872
+2024-04-25 17:57:05,490 INFO [rast2]            SheetStub.java:967  | Loaded /sheet#1/sheet#1.xml
+2024-04-25 17:57:05,806 INFO [rast2]      PartwiseBuilder.java:2651 | Exporting sheet(s): [#1]
+2024-04-25 17:57:05,850 INFO [rast2]        ScoreExporter.java:164  | Score rast2 exported to resouces\application\pdf\rast2.mxl
+2024-04-25 17:57:05,874 INFO [rast2]                Score.java:187  | Closing {Score 1}

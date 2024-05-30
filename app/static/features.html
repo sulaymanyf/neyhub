@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features - Music Practice Platform</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f7f7f7;
+            font-family: 'Montserrat', sans-serif;
+        }
+       .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+       .feature-card {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+       .feature-card:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+       .feature-icon {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+       .feature-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+       .feature-desc {
+            font-size: 16px;
+            color: #666;
+        }
+        /* Add some colorful icons */
+       .feature-icon.music {
+            color: #ff69b4;
+        }
+       .feature-icon.graduation-cap {
+            color: #34c759;
+        }
+       .feature-icon.chart-line {
+            color: #ffb700;
+        }
+       .feature-icon.star {
+            color: #9b59b6;
+        }
+       .feature-icon.robot {
+            color: #3498db;
+        }
+       .feature-icon.users {
+            color: #f1c40f;
+        }
+    </style>
+</head>
+<body>
+     	<div id="nav-container"></div>
+    <div class="container">
+        <h1 class="display-4">Features</h1>
+        <p class="lead">Our music practice platform is designed to help you improve your skills and make practice more enjoyable. Here are some of the features we're working on:</p>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <i class="fas fa-music feature-icon music"></i>
+                    <h5 class="feature-title">MP3 Upload &amp; Sheet Music Generation</h5>
+                    <p class="feature-desc">Upload your favorite MP3 files and our AI will automatically generate sheet music for you to practice with.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <i class="fas fa-graduation-cap feature-icon graduation-cap"></i>
+                    <h5 class="feature-title">Beginner Mode</h5>
+                    <p class="feature-desc">Our beginner mode is designed for new learners, with simplified exercises and interactive lessons to help you get started.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <i class="fas fa-chart-line feature-icon chart-line"></i>
+                    <h5 class="feature-title">Personalized Practice Plans</h5>
+                    <p class="feature-desc">Our AI will create a personalized practice plan based on your experience and progress, ensuring you're always challenged and improving.</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <i class="fas fa-star feature-icon star"></i>
+                    <h5 class="feature-title">Grading Mode</h5>
+                    <p class="feature-desc">Record yourself playing and our AI will grade your performance, providing feedback on areas for improvement.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <i class="fas fa-robot feature-icon robot"></i>
+                    <h5 class="feature-title">AI-powered Feedback</h5>
+                    <p class="feature-desc">Get instant feedback on your playing, with our AI analyzing your performance and providing suggestions for improvement.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <i class="fas fa-users feature-icon users"></i>
+                    <h5 class="feature-title">Community Sharing</h5>
+                    <p class="feature-desc">Share your progress and connect with other musicians, getting feedback and inspiration from the community.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+     fetch('nav.html')
+     .then(response => response.text())
+     .then(html => {
+        document.getElementById('nav-container').innerHTML = html;
+      });
+  </script>
+</html>

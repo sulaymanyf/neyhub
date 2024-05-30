@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - Music Practice Platform</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f7f7f7;
+            font-family: 'Montserrat', sans-serif;
+        }
+      .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+      .pricing-table {
+            margin-top: 40px;
+        }
+      .pricing-plan {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+      .pricing-plan:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+      .pricing-header {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+      .pricing-features {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+      .pricing-price {
+            font-size: 36px;
+            font-weight: bold;
+            color: #337ab7;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+     	<div id="nav-container"></div>
+    <div class="container">
+        <h1 class="display-4">Pricing</h1>
+        <p class="lead">Choose the plan that's right for you:</p>
+        <div class="pricing-table">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="pricing-plan">
+                        <h5 class="pricing-header">Free</h5>
+                        <ul class="pricing-features">
+                            <li>20 hours of practice per month</li>
+                            <li> Limited access to features</li>
+                        </ul>
+                        <p class="pricing-price">$0/month</p>
+                        <button class="btn btn-success">Sign up</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pricing-plan">
+                        <h5 class="pricing-header">Basic</h5>
+                        <ul class="pricing-features">
+                            <li>120 hours of practice per month</li>
+                            <li>Full access to features</li>
+                        </ul>
+                        <p class="pricing-price">$5/month</p>
+                        <button class="btn btn-success">Sign up</button>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="pricing-plan">
+                        <h5 class="pricing-header">Pro</h5>
+                        <ul class="pricing-features">
+                            <li>Unlimited practice hours</li>
+                            <li>Full access to features</li>
+                            <li>Personalized model service</li>
+                        </ul>
+                        <p class="pricing-price">$20/month</p>
+                        <button class="btn btn-success">Sign up</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+     fetch('nav.html')
+     .then(response => response.text())
+     .then(html => {
+        document.getElementById('nav-container').innerHTML = html;
+      });
+  </script>
+</html>

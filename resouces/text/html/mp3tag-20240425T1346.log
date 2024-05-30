@@ -1,0 +1,4 @@
+2024-04-25 13:46:17,020 WARN [mp3tag]         ImageLoading.java:208  | Cannot find a loader for resouces\text\html\mp3tag.html
+2024-04-25 13:46:17,099 INFO [mp3tag]                 Book.java:2551 | Stored /book.xml
+2024-04-25 13:46:17,099 INFO [mp3tag]                 Book.java:2510 | Book stored as resouces\text\html\mp3tag.omr
+2024-04-25 13:46:17,105 INFO [mp3tag]                 Book.java:535  | Created scores: []

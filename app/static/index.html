@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File List</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>File List</h1>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">File Name</th>
+                    <th scope="col">Parsed</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody id="file-list">
+                <!-- list items will be appended here -->
+            </tbody>
+        </table>
+    </div>
+
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                type: "GET",
+                url: "http://127.0.0.1:8081/files/?skip=0&limit=100",
+                dataType: "json",
+                success: function(data) {
+                    $.each(data, function(index, file) {
+                        var tableRow = $("<tr></tr>");
+                        tableRow.append($("<th scope='row'></th>").text(file.id));
+                        tableRow.append($("<td></td>").text(file.file_name));
+                        if (file.parsed) {
+                            tableRow.append($("<td></td>").text("Parsed"));
+                            tableRow.append($("<td></td>").append($("<button class='btn btn-success btn-sm'></button>").text("Start").on("click", function() {
+                                // Redirect to another page and pass the data
+                                window.location.href = "note.html?id=" + file.id + "&file_name=" + file.file_name;
+                            })));
+                        } else {
+                            var parsing = false; // flag to indicate whether the file is being parsed
+                            var clickCount = 0; // counter to keep track of the number of times the "Parse" button is clicked
+                           tableRow.append($("<td></td>").html("<span class='btn btn-secondary '>Not Parsed</span>"));
+                           tableRow.append($("<td></td>").append($("<button class='btn btn-primary btn-sm'></button>").text("Parse").on("click", function() {
+                               if (parsing) return; // if already parsing, do nothing
+                                if (clickCount >= 1) return; // if the button has been clicked before, do nothing
+                                clickCount++; // increment the counter
+                                parsing = true; // set flag to true
+                                // send request to parse the file
+                                console.log("Parsing file: " + file.file_name);
+                               // display progress bar at the bottom of the table
+                                var progressBar = $("<div class=\"progress\">\n" +
+                                    "  <div class=\"progress-bar progress-bar-striped progress-bar-animated\" role=\"progressbar\" aria-valuenow=\"75\" aria-valuemin=\"0\" aria-valuemax=\"100\" style=\"width: 75%\"></div>\n" +
+                                    "</div>");
+                                $("#file-list").append(progressBar);
+
+                                 // send request to backend
+                                $.ajax({
+                                  type: "POST",
+                                  url: "http://127.0.0.1:8081/files/parse_file", // replace with your backend URL
+                                  data:  JSON.stringify({ file_name: file.file_name, id: file.id }),
+                                  contentType: "application/json",
+                                  dataType: 'json',
+
+                                  success: function(data) {
+                                     progressBar.find(".progress-bar").css("width", "100%");
+
+                                      if (data.code === 200) {
+                                      // display success toast
+                                      var toast = $("<div class='toast' role='alert' aria-live='assertive' aria-atomic='true'>");
+                                      toast.append($("<div class='toast-header'>").append($("<strong class='mr-auto'>Parse Successful</strong>")));
+                                      toast.append($("<div class='toast-body'>").text("File parsed successfully!"));
+                                      toast.appendTo("body");
+                                      toast.toast("show");
+                                    } else if (data.code === 403) {
+                                      // display error toast
+                                      var toast = $("<div class='toast' role='alert' aria-live='assertive' aria-atomic='true'>");
+                                      toast.append($("<div class='toast-header'>").append($("<strong class='mr-auto'>Parse Failed</strong>")));
+                                      toast.append($("<div class='toast-body'>").text("File parse failed. Please try again."));
+                                      toast.appendTo("body");
+                                      toast.toast("show");
+                                    }
+                                    // update progress bar width
+                                    // hide progress bar after 1 second
+                                    setTimeout(function() {
+                                      progressBar.remove();
+                                      // update UI to show that file is parsed
+                                      tableRow.find("td:eq(1)").html("<button class='btn btn-success btn-sm' disabled>Parsed</button>");
+                                      parsing = false; // set flag to false
+                                      clickCount = 0; // reset the counter
+                                    }, 1000);
+                                  }
+                                });
+                            })));
+                        }
+                        $("#file-list").append(tableRow);
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
